@@ -138,3 +138,29 @@ INNER JOIN dept_emp as de
 ON (ce.emp_no = de.emp_no)
 INNER JOIN departments as d
 ON (de.dept_no = d.dept_no);
+
+--Tailored list of retiring sales employees
+SELECT ce.emp_no,
+ce.first_name,
+ce.last_name,
+d.dept_name
+INTO sales_info
+FROM current_emp as ce
+INNER JOIN dept_emp as de
+ON (ce.emp_no = de.emp_no)
+INNER JOIN departments as d
+ON (de.dept_no = d.dept_no)
+WHERE d.dept_name = 'Sales';
+
+--Tailored list of retiring Sales and Development employees
+SELECT ce.emp_no,
+ce.first_name,
+ce.last_name,
+d.dept_name
+INTO sales_development_info
+FROM current_emp as ce
+INNER JOIN dept_emp as de
+ON (ce.emp_no = de.emp_no)
+INNER JOIN departments as d
+ON (de.dept_no = d.dept_no)
+WHERE d.dept_name IN ('Sales', 'Development');	
