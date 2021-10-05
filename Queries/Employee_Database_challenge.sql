@@ -59,3 +59,34 @@ ORDER BY e.emp_no;
 
 --Check Mentorship Eligibility table
 SELECT * FROM mentorship_eligibility;
+
+--Get Count of eligible employees for mentorship program
+SELECT count(title) FROM mentorship_eligibility;
+
+--Mentorship program by title counts
+SELECT title, COUNT(title)
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY COUNT(title) DESC;
+
+--Expanded mentorship program eligibility
+SELECT DISTINCT ON (e.emp_no) e.emp_no,
+	e.first_name,
+	e.last_name,
+	e.birth_date,
+	de.from_date,
+	de.to_date,
+	ti.title
+INTO expanded_mentorship
+FROM employees as e
+INNER JOIN dept_emp as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN titles as ti
+ON (e.emp_no = ti.emp_no)
+WHERE (de.to_date = '9999-01-01')
+	AND (de.from_date < '1990-01-01')
+	AND (e.birth_date > '1955-12-31')
+ORDER BY e.emp_no;
+
+-- View expanded mentorship program eligibility
+SELECT * FROM expanded_mentorship;
