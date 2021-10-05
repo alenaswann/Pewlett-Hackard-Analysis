@@ -28,8 +28,8 @@ There are only 1,549 employees eligible for the planned mentorship program. In a
 
 The eligible employees for the mentorship program grouped by title are in the table below. Compared to the retiring titles table, there are no managers eligible to mentor the replacements for the two retiring managers.
 
-![mentorship counts]()
+![mentorship counts](Images/mentorship_counts.PNG)
 
 However, if the mentorship eligibility program is expanded to look at not just employees born in 1965, but instead at  employees younger than the minimum retirement age (1955-12-31) that have been working at Pewlett Hackard for more than 10 years (prior to 1990-01-01), 50,143 employees are available to potentially mentor new employees. These employees have been working with the company for many years and could provide significant mentorship despite not being born in 1965. If these employees mentor two new employees, the mentorship program can cover the "silver tsunami".
 
-![expanded mentorship]()
+![expanded mentorship](Images/expanded_mentorship.PNG)
